@@ -12,9 +12,7 @@
         "habilidades de lucha",
         "tecnología avanzada"
       ],
-      "debilidades": [
-        "Humano normal"
-      ],
+      "debilidades": ["Humano normal"],
       "peso": 95,
       "estatura": 1.88,
       "colorPelo": "Negro",
@@ -22,11 +20,7 @@
       "alias": "El caballero oscuro",
       "residencia": "Gotham City",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Joker",
-        "Bane",
-        "Dos Caras"
-      ]
+      "enemigos": ["Joker", "Bane", "Dos Caras"]
     },
     {
       "id": "2",
@@ -48,11 +42,7 @@
       "alias": "Alan Scott",
       "residencia": "planeta Oa",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Sinestro",
-        "Black Hand",
-        "Cuerpo de Linternas Rojo"
-      ]
+      "enemigos": ["Sinestro", "Black Hand", "Cuerpo de Linternas Rojo"]
     },
     {
       "id": "3",
@@ -69,9 +59,7 @@
         "aliento congelante",
         "vuelo"
       ],
-      "debilidades": [
-        "Kryptonita"
-      ],
+      "debilidades": ["Kryptonita"],
       "peso": 107,
       "estatura": 1.91,
       "colorPelo": "Negro",
@@ -79,10 +67,7 @@
       "alias": "Hombre de Acero",
       "residencia": "Metrópolis",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Lex Luthor",
-        "Doomsday"
-      ]
+      "enemigos": ["Lex Luthor", "Doomsday"]
     },
     {
       "id": "4",
@@ -91,12 +76,8 @@
       "imgHero": "./assets/flash/img1.jpg",
       "superNombre": "Flash",
       "nombre": "Barry Allen",
-      "poderes": [
-        "Super velocidad"
-      ],
-      "debilidades": [
-        "No puede correr a través del tiempo"
-      ],
+      "poderes": ["Super velocidad"],
+      "debilidades": ["No puede correr a través del tiempo"],
       "peso": 81,
       "estatura": 1.85,
       "colorPelo": "Castaño",
@@ -104,10 +85,7 @@
       "alias": "El hombre más rápido del mundo",
       "residencia": "Central City",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Capitán Frío",
-        "Gorila Grodd"
-      ]
+      "enemigos": ["Capitán Frío", "Gorila Grodd"]
     },
     {
       "id": "5",
@@ -123,9 +101,7 @@
         "habilidades de lucha",
         "vuelo"
       ],
-      "debilidades": [
-        "Magia"
-      ],
+      "debilidades": ["Magia"],
       "peso": 74,
       "estatura": 1.75,
       "colorPelo": "Negro",
@@ -133,10 +109,7 @@
       "alias": "Princesa Amazona",
       "residencia": "Themyscira",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Ares",
-        "Cheetah"
-      ]
+      "enemigos": ["Ares", "Cheetah"]
     },
     {
       "id": "6",
@@ -152,9 +125,7 @@
         "habilidades de lucha",
         "comunicación con la vida marina"
       ],
-      "debilidades": [
-        "Vulnerable fuera del agua"
-      ],
+      "debilidades": ["Vulnerable fuera del agua"],
       "peso": 146,
       "estatura": 1.85,
       "colorPelo": "Rubio",
@@ -162,10 +133,7 @@
       "alias": "Rey de los Siete Mares",
       "residencia": "Atlantis",
       "afiliaciones": "Liga de la Justicia",
-      "enemigos": [
-        "Black Manta",
-        "Ocean Master"
-      ]
+      "enemigos": ["Black Manta", "Ocean Master"]
     }
   ]
 }

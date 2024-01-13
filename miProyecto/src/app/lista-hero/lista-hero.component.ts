@@ -22,7 +22,6 @@ import { RouterLink } from '@angular/router';
 export class ListaHeroComponent {
   index: number = -1;
   objetivo: string = '';
-  click: boolean = false;
 
   constructor(public service: ServicioHeroService) {
     this.service.colorSuperior = '#b300b3';
@@ -34,8 +33,5 @@ export class ListaHeroComponent {
   }
   Actualizar(): void {
     this.service.Actualizar(this.objetivo);
-  }
-  Capturar(respuesta: boolean): void {
-    this.click = respuesta;
   }
 }

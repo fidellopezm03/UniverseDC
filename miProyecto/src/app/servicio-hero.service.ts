@@ -10,6 +10,8 @@ export class ServicioHeroService {
   colorSuperior: string = '#2b2b2b';
   valorActivo: string = '';
   mostrarSuperior: boolean = false;
+  modificar: boolean = false;
+  agregar: boolean = false;
   constructor(private http: HttpClient) {
     this.getHeroes();
   }

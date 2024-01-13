@@ -32,7 +32,7 @@
         [style.--color]="service.colorSuperior"
         data-bs-toggle="modal"
         data-bs-target="#miModal"
-        (click)="click = true"
+        (click)="service.agregar = true"
       >
         <div class="card-body">
           <br /><br />
@@ -53,16 +53,13 @@
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                (click)="click = false"
+                (click)="service.agregar = false"
               ></button>
             </div>
 
             <!-- Modal body -->
 
-            <app-agregar
-              *ngIf="click"
-              (finalizado)="Capturar($event)"
-            ></app-agregar>
+            <app-agregar *ngIf="service.agregar"></app-agregar>
           </div>
         </div>
       </div>

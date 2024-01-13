@@ -1,12 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {
   ReactiveFormsModule,
@@ -27,7 +20,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './agregar.component.html',
   styleUrl: './agregar.component.css',
 })
-export class AgregarComponent implements OnInit, OnChanges {
+export class AgregarComponent implements OnInit {
   miFormulario: FormGroup = new FormGroup({
     id: new FormControl(''),
     colorHero: new FormControl('', [
@@ -66,11 +59,11 @@ export class AgregarComponent implements OnInit, OnChanges {
     afiliaciones: new FormControl('', [Validators.maxLength(50)]),
     enemigos: new FormArray([], [Validators.required]),
   });
-  @Input() modificar: boolean = false;
+
   @Input() indice: number = -1;
-  @Output() finalizado = new EventEmitter<boolean>();
-  ngOnChanges(): void {
-    if (this.modificar) {
+
+  ngOnInit(): void {
+    if (this.service.modificar) {
       this.miFormulario.patchValue(this.service.Heroes[this.indice]);
       const Poderes = this.miFormulario.get('poderes') as FormArray;
       const Debilidades = this.miFormulario.get('debilidades') as FormArray;
@@ -89,7 +82,6 @@ export class AgregarComponent implements OnInit, OnChanges {
       });
     }
   }
-  ngOnInit(): void {}
   constructor(
     public service: ServicioHeroService,
     private instancia: FormBuilder
@@ -153,14 +145,15 @@ export class AgregarComponent implements OnInit, OnChanges {
     referencia.removeAt(referencia.length - 1);
   }
   Guardar(): void {
-    this.Finalizar();
     let nuevoHero: superHero = new superHero();
     nuevoHero = this.miFormulario.value;
 
-    if (this.modificar) this.service.put(nuevoHero, this.indice);
-    else this.service.post(nuevoHero);
-  }
-  Finalizar(): void {
-    this.finalizado.emit(false);
+    if (this.service.modificar) {
+      this.service.put(nuevoHero, this.indice);
+      this.service.modificar = false;
+    } else {
+      this.service.post(nuevoHero);
+      this.service.agregar = false;
+    }
   }
 }
