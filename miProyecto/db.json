@@ -1,0 +1,171 @@
+{
+  "Heroes": [
+    {
+      "id": "1",
+      "colorHero": "#efe8ef",
+      "img": "./assets/Batman/logo.jpeg",
+      "imgHero": "./assets/Batman/bat1.jpg",
+      "superNombre": "Batman",
+      "nombre": "Bruce Wayne",
+      "poderes": [
+        "Inteligencia",
+        "habilidades de lucha",
+        "tecnología avanzada"
+      ],
+      "debilidades": [
+        "Humano normal"
+      ],
+      "peso": 95,
+      "estatura": 1.88,
+      "colorPelo": "Negro",
+      "colorOjos": "Azules",
+      "alias": "El caballero oscuro",
+      "residencia": "Gotham City",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Joker",
+        "Bane",
+        "Dos Caras"
+      ]
+    },
+    {
+      "id": "2",
+      "colorHero": "#00FF00",
+      "img": "./assets/linternaVerde/logo.png",
+      "imgHero": "./assets/linternaVerde/img1.jpg",
+      "superNombre": "Linterna Verde",
+      "nombre": " Kyle Rayner",
+      "poderes": [
+        "Posee el anillo de poder que posee la capacidad de crear manifestaciones de luz sólida mediante la utilización del pensamiento"
+      ],
+      "debilidades": [
+        " Incapacidad de actuar frente a objetos de color amarillo"
+      ],
+      "peso": 77,
+      "estatura": 1.8,
+      "colorPelo": "Negro",
+      "colorOjos": "Marrones",
+      "alias": "Alan Scott",
+      "residencia": "planeta Oa",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Sinestro",
+        "Black Hand",
+        "Cuerpo de Linternas Rojo"
+      ]
+    },
+    {
+      "id": "3",
+      "colorHero": "#4169e1",
+      "img": "./assets/superman/logo.jpeg",
+      "imgHero": "./assets/superman/superman1.jpg",
+      "superNombre": "Superman",
+      "nombre": "Clark Kent",
+      "poderes": [
+        "Superfuerza",
+        "supervelocidad",
+        "invulnerabilidad",
+        "visión de calor",
+        "aliento congelante",
+        "vuelo"
+      ],
+      "debilidades": [
+        "Kryptonita"
+      ],
+      "peso": 107,
+      "estatura": 1.91,
+      "colorPelo": "Negro",
+      "colorOjos": "Azules",
+      "alias": "Hombre de Acero",
+      "residencia": "Metrópolis",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Lex Luthor",
+        "Doomsday"
+      ]
+    },
+    {
+      "id": "4",
+      "colorHero": "#ff4500",
+      "img": "./assets/flash/logo.jpeg",
+      "imgHero": "./assets/flash/img1.jpg",
+      "superNombre": "Flash",
+      "nombre": "Barry Allen",
+      "poderes": [
+        "Super velocidad"
+      ],
+      "debilidades": [
+        "No puede correr a través del tiempo"
+      ],
+      "peso": 81,
+      "estatura": 1.85,
+      "colorPelo": "Castaño",
+      "colorOjos": "Azules",
+      "alias": "El hombre más rápido del mundo",
+      "residencia": "Central City",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Capitán Frío",
+        "Gorila Grodd"
+      ]
+    },
+    {
+      "id": "5",
+      "colorHero": "#ff6347",
+      "img": "./assets/mujerMaravilla/logo.jpeg",
+      "imgHero": "./assets/mujerMaravilla/img1.jpg",
+      "superNombre": "Wonder Woman",
+      "nombre": "Diana Prince",
+      "poderes": [
+        "Fuerza sobrehumana",
+        "velocidad",
+        "resistencia",
+        "habilidades de lucha",
+        "vuelo"
+      ],
+      "debilidades": [
+        "Magia"
+      ],
+      "peso": 74,
+      "estatura": 1.75,
+      "colorPelo": "Negro",
+      "colorOjos": "Azules",
+      "alias": "Princesa Amazona",
+      "residencia": "Themyscira",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Ares",
+        "Cheetah"
+      ]
+    },
+    {
+      "id": "6",
+      "colorHero": "#7fffd4",
+      "img": "./assets/aquaman/logo.jpeg",
+      "imgHero": "./assets/aquaman/img1.jpg",
+      "superNombre": "Aquaman",
+      "nombre": "Arthur Curry",
+      "poderes": [
+        "Fuerza sobrehumana",
+        "velocidad",
+        "resistencia",
+        "habilidades de lucha",
+        "comunicación con la vida marina"
+      ],
+      "debilidades": [
+        "Vulnerable fuera del agua"
+      ],
+      "peso": 146,
+      "estatura": 1.85,
+      "colorPelo": "Rubio",
+      "colorOjos": "Azules",
+      "alias": "Rey de los Siete Mares",
+      "residencia": "Atlantis",
+      "afiliaciones": "Liga de la Justicia",
+      "enemigos": [
+        "Black Manta",
+        "Ocean Master"
+      ]
+    }
+  ]
+}

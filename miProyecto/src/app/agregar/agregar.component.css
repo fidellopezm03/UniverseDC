@@ -1,0 +1,32 @@
+.estilo {
+  background-color: #2b2b2b;
+}
+span {
+  color: red;
+}
+label {
+  font-family: UnitedPlanetsBold;
+  color: #f5f5f5;
+}
+input::placeholder {
+  color: black;
+}
+input {
+  background-color: #f5f5f5;
+  color: #2b2b2b;
+}
+input:focus {
+  background-color: #efe8ef;
+  box-shadow: 0 0 2px #b300b3, 0 0 5px #b300b3, 0 0 10px #b300b3;
+  color: black;
+}
+button {
+  border-radius: 4rem !important;
+  border: 2px solid #b300b3;
+  color: #b300b3;
+}
+button:hover {
+  background-color: #b300b3;
+  color: #fff;
+  color: black;
+}

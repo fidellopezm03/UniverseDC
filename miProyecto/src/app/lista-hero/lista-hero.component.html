@@ -1,0 +1,100 @@
+<div class="container-fluid mt-4">
+  <input
+    type="text"
+    placeholder="Busque por el nombre del Héroe"
+    [(ngModel)]="objetivo"
+    class="busqueda mt-2 mt-2"
+    name="target"
+    (ngModelChange)="Actualizar()"
+    style="width: 230px; height: 40px"
+  />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="currentColor"
+    class="bi bi-search"
+    viewBox="0 0 16 16"
+    style="color: white"
+  >
+    <path
+      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+    />
+  </svg>
+  <div class="row row-cols-3">
+    <div
+      class="flex flex-column col-4 overflow-auto"
+      style="height: 700px; width: 250px"
+    >
+      <!-- Lista de Héroes -->
+      <div
+        class="card mt-4"
+        [style.--color]="service.colorSuperior"
+        data-bs-toggle="modal"
+        data-bs-target="#miModal"
+        (click)="click = true"
+      >
+        <div class="card-body">
+          <br /><br />
+
+          <h4 class="card-title mt-2" style="text-align: center">
+            Agregar nuevo Héroe
+          </h4>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal" id="miModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header cajaModal">
+              <h4 class="modal-title tituloModal">Agregue un nuevo Héroe</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                (click)="click = false"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+
+            <app-agregar
+              *ngIf="click"
+              (finalizado)="Capturar($event)"
+            ></app-agregar>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngFor="let i of service.Heroes; let j = index"
+        (click)="Transmitir(j)"
+      >
+        <div class="card mt-4" [style.--color]="service.Heroes[j].colorHero">
+          <div class="card-body">
+            <br />
+            <img
+              [src]="i.img"
+              class="img-thumbnail"
+              width="60"
+              height="60"
+            /><br />
+            <h4 class="card-title mt-4" style="text-align: center">
+              {{ i.superNombre }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detalles de Héroes -->
+    <div class="col-8" *ngIf="index != -1">
+      <app-detalles-hero [indice]="index"></app-detalles-hero>
+    </div>
+  </div>
+</div>
+<div
+  style="background-color: #000; color: #fff; text-align: center; padding: 10px"
+>
+  © 2024 DC. Todos los derechos reservados.
+</div>

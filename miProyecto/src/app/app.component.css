@@ -1,0 +1,46 @@
+@keyframes parpadear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+h1 {
+  animation: parpadear 2s infinite;
+}
+h2,
+h1,
+li a {
+  font-family: UnitedPlanetsBold;
+}
+li a {
+  color: white;
+}
+li a:hover {
+  font-size: 25px;
+  padding: 1%;
+}
+.estilo {
+  font-size: 100px;
+  color: #efe8ef;
+  text-shadow: 0 0 9px #efe8ef, 0 0 18px #efe8ef;
+  background-color: #2b2b2b00;
+}
+.estilo0 {
+  color: var(--color);
+
+  background-color: #2b2b2be1;
+
+  box-shadow: 0 0 2px var(--color), 0 0 5px var(--color), 0 0 10px var(--color);
+}
+.estilo2 {
+  background-color: #2b2b2b00;
+}
+
+.estilo {
+  box-shadow: 0 0 10px #2b2b2b;
+}

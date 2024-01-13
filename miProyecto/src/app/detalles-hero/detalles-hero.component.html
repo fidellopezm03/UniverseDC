@@ -1,0 +1,178 @@
+<!-- se muestran los detalles de cada super Héroe mientras no se quiera modificar  -->
+<div class="table-hover" [style.--color]="service.Heroes[indice].colorHero">
+  <div class="row row-cols-3">
+    <div class="col-4 contenedor">
+      <table class="tabla-transparente w-100 mt-4">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td class="columna1">Nombre Original</td>
+            <td class="columna2">{{ service.Heroes[indice].nombre }}</td>
+          </tr>
+          <tr>
+            <td class="columna1">Super Poderes</td>
+            <td class="columna2">
+              <span *ngFor="let poderes of service.Heroes[indice].poderes"
+                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+                >{{ poderes }}<br
+              /></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="columna1">Debilidades</td>
+            <td class="columna2">
+              <span
+                *ngFor="let debilidades of service.Heroes[indice].debilidades"
+                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+                >{{ debilidades }}<br
+              /></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="columna1">Peso</td>
+            <td class="columna2">{{ service.Heroes[indice].peso }}Kg</td>
+          </tr>
+          <tr>
+            <td class="columna1">Estatura</td>
+            <td class="columna2">{{ service.Heroes[indice].estatura }}m</td>
+          </tr>
+          <tr>
+            <td class="columna1">Color del Pelo</td>
+            <td class="columna2">{{ service.Heroes[indice].colorPelo }}</td>
+          </tr>
+
+          <tr>
+            <td class="columna1">Color de los ojos</td>
+            <td class="columna2">{{ service.Heroes[indice].colorOjos }}</td>
+          </tr>
+
+          <tr>
+            <td class="columna1">Alias</td>
+            <td class="columna2">{{ service.Heroes[indice].alias }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4 contenedor">
+      <table class="tabla-transparente w-100 mt-4">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td class="columna1">Residencia</td>
+            <td class="columna2">{{ service.Heroes[indice].residencia }}</td>
+          </tr>
+
+          <tr>
+            <td class="columna1">Afiliación</td>
+            <td class="columna2">{{ service.Heroes[indice].afiliaciones }}</td>
+          </tr>
+
+          <tr>
+            <td class="columna1">enemigos</td>
+            <td class="columna2">
+              <span *ngFor="let enemigos of service.Heroes[indice].enemigos"
+                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+                >{{ enemigos }}<br
+              /></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <div style="text-align: center; font-size: 3rem; height: 100px">
+        <h1>{{ service.Heroes[indice].superNombre }}</h1>
+      </div>
+
+      <img
+        [src]="service.Heroes[indice].imgHero"
+        width="400"
+        height="500"
+        class="Heroe mb-4"
+        [style.--color]="service.Heroes[indice].colorHero"
+      />
+
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#myModal2"
+        class="buttonM"
+      >
+        Eliminar
+      </button>
+
+      <div class="modal" id="myModal2">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header cajaModal">
+              <h4 class="modal-title tituloModal">Modifique su Héroe</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div
+              class="modal-body"
+              style="background-color: #2b2b2b; color: whitesmoke"
+            >
+              Usted está seguro de eliminar el Héroe?
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="color: whitesmoke">
+              <button
+                (click)="Eliminar()"
+                data-bs-dismiss="modal"
+                routerLink="lista-hero"
+              >
+                Aceptar
+              </button>
+              <button type="button" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#myModal"
+        (click)="modificar = true"
+        style="margin-left: 10px"
+        class="buttonM"
+      >
+        Modificar
+      </button>
+
+      <!-- Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header cajaModal">
+              <h4 class="modal-title tituloModal">Modifique su Héroe</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                (click)="modificar = false"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+
+            <app-agregar
+              [modificar]="modificar"
+              [indice]="indice"
+              (finalizado)="Capturar($event)"
+            ></app-agregar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+</div>

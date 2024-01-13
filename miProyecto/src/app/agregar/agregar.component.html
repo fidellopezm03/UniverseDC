@@ -1,0 +1,553 @@
+<div class="card estilo" style="width: 100%">
+  <div class="card-body">
+    <form [formGroup]="miFormulario">
+      <label class="Form-label">Color del Héroe</label>
+      <div class="mb-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="colorHero"
+          placeholder="Por favor ingrese el color"
+        />
+        <div class="mt-2" [hidden]="colorHero.valid || colorHero.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="colorHero.errors?.['required']"
+            >El color es obligatorio</span
+          >
+          <span *ngIf="colorHero.errors?.['minlength']"
+            >El color debe tener 4 caracteres como mínimo comenzando por #</span
+          >
+          <span *ngIf="colorHero.errors?.['maxlength']"
+            >El color debe tener 7 caracteres como máximo comenzando por #</span
+          >
+        </div>
+      </div>
+      <label class="Form-label">Super Nombre</label>
+      <div class="mb-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="superNombre"
+          placeholder="Por favor ingrese el super nombre"
+        />
+        <div class="mt-2" [hidden]="superNombre.valid || superNombre.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="superNombre.errors?.['required']"
+            >El super nombre es obligatorio</span
+          >
+          <span *ngIf="superNombre.errors?.['minlength']"
+            >El super nombre es muy corto</span
+          >
+          <span *ngIf="superNombre.errors?.['maxlength']"
+            >El super nombre es muy largo</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Por favor ingrese el nombre"
+        />
+        <div class="mt-2" [hidden]="nombre.valid || nombre.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="nombre.errors?.['required']"
+            >El nombre es obligatorio</span
+          >
+
+          <span *ngIf="nombre.errors?.['minlength']"
+            >El nombre es muy corto</span
+          >
+          <span *ngIf="nombre.errors?.['maxlength']"
+            >El nombre es muy largo</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Imágen del Logo</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="img"
+          placeholder="Introduzca una dirreción de imagen"
+        />
+        <div class="mt-2" [hidden]="img.valid || img.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="img.errors?.['required']">La imagen es obligatoria</span>
+          <span *ngIf="img.errors?.['minlength']"
+            >La dirección de la imagen es muy corta</span
+          >
+          <span *ngIf="img.errors?.['maxlength']"
+            >La dirección de la imagen es muy larga</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Imágen del Héroe</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imgHero"
+          placeholder="Introduzca una dirreción de imagen"
+        />
+        <div class="mt-2" [hidden]="imgHero.valid || imgHero.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="imgHero.errors?.['required']"
+            >La imagen es obligatoria</span
+          >
+          <span *ngIf="imgHero.errors?.['minlength']"
+            >La dirección de la imagen es muy corta</span
+          >
+          <span *ngIf="imgHero.errors?.['maxlength']"
+            >La dirección de la imagen es muy larga</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Peso</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="peso"
+          placeholder="Por favor ingrese el peso"
+        />
+        <div class="mt-2" [hidden]="peso.valid || peso.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="peso.errors?.['required']">El peso es obligatorio</span>
+
+          <span *ngIf="peso.errors?.['min']">El peso es muy pequeño</span>
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Estatura</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="estatura"
+          placeholder="Por favor ingrese la estatura"
+        />
+        <div class="mt-2" [hidden]="estatura.valid || estatura.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="estatura.errors?.['required']"
+            >La estatura es obligatoria</span
+          >
+
+          <span *ngIf="estatura.errors?.['min']"
+            >La estatura es muy pequeña</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Color de Pelo</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="colorPelo"
+          placeholder="Por favor ingrese el color del pelo"
+        />
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Color de los ojos</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="colorOjos"
+          placeholder="Por favor ingrese el color de los ojos"
+        />
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Alias</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="alias"
+          placeholder="Por favor ingrese el alias"
+        />
+        <div class="mt-2" [hidden]="alias.valid || alias.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="alias.errors?.['required']"
+            >El alias es obligatorio</span
+          >
+
+          <span *ngIf="alias.errors?.['minlength']">El alias es muy corto</span>
+          <span *ngIf="alias.errors?.['maxlength']">El alias es muy largo</span>
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Residencia</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="residencia"
+          placeholder="Por favor ingrese la residencia"
+        />
+        <div class="mt-2" [hidden]="residencia.valid || residencia.pristine">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="residencia.errors?.['required']"
+            >La residencia es obligatoria</span
+          >
+
+          <span *ngIf="residencia.errors?.['minlength']"
+            >La residencia es muy corta</span
+          >
+          <span *ngIf="residencia.errors?.['maxlength']"
+            >La residencia es muy larga</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Afiliación</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="afiliaciones"
+          placeholder="Por favor ingrese la afiliación"
+        />
+        <div
+          class="mt-2"
+          [hidden]="afiliaciones.valid || afiliaciones.pristine"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+            style="padding-right: 5px; color: red"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+          <span *ngIf="afiliaciones.errors?.['required']"
+            >La afiliación es obligatoria</span
+          >
+
+          <span *ngIf="afiliaciones.errors?.['minlength']"
+            >La afiliación es muy corta</span
+          >
+          <span *ngIf="afiliaciones.errors?.['maxlength']"
+            >La afiliación es muy larga</span
+          >
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Poderes del Héroe</label>
+        <ul class="list-group list-group-flush lista" formArrayName="poderes">
+          <li
+            style="background-color: transparent"
+            class="list-group-item"
+            *ngFor="let ing of poderes.controls; let i = index"
+          >
+            <div>
+              <input class="form-control" type="text" [formControlName]="i" />
+              <div
+                class=""
+                [hidden]="
+                  miFormulario.get(['poderes', i])?.valid ||
+                  miFormulario.get(['poderes', i])?.pristine
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-exclamation-circle"
+                  viewBox="0 0 16 16"
+                  style="padding-right: 5px; color: red"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                  />
+                  <path
+                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                  />
+                </svg>
+                <span *ngIf="miFormulario.get(['poderes', i])?.errors"
+                  >Este campo no puede estar vacio</span
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button
+          (click)="AddFormArray('poderes')"
+          class="boton"
+          style="margin-right: 2rem"
+        >
+          +
+        </button>
+        <button
+          (click)="RemoveFormArray('poderes')"
+          *ngIf="poderes.length"
+          class="boton"
+        >
+          -
+        </button>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Debilidades del Héroe</label>
+        <ul
+          class="list-group list-group-flush lista"
+          formArrayName="debilidades"
+        >
+          <li
+            style="background-color: transparent"
+            class="list-group-item"
+            *ngFor="let ing of debilidades.controls; let i = index"
+          >
+            <div>
+              <input class="form-control" type="text" [formControlName]="i" />
+              <div
+                class=""
+                [hidden]="
+                  miFormulario.get(['debilidades', i])?.valid ||
+                  miFormulario.get(['debilidades', i])?.pristine
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-exclamation-circle"
+                  viewBox="0 0 16 16"
+                  style="padding-right: 5px; color: red"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                  />
+                  <path
+                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                  />
+                </svg>
+                <span *ngIf="miFormulario.get(['debilidades', i])?.errors"
+                  >Este campo no puede estar vacio</span
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button
+          (click)="AddFormArray('debilidades')"
+          class="boton"
+          style="margin-right: 2rem"
+        >
+          +
+        </button>
+        <button
+          (click)="RemoveFormArray('debilidades')"
+          *ngIf="debilidades.length"
+          class="boton"
+        >
+          -
+        </button>
+      </div>
+      <div class="mb-2">
+        <label class="Form-label">Enemigos del Héroe</label>
+        <ul class="list-group list-group-flush lista" formArrayName="enemigos">
+          <li
+            style="background-color: transparent"
+            class="list-group-item"
+            *ngFor="let ing of enemigos.controls; let i = index"
+          >
+            <div>
+              <input class="form-control" type="text" [formControlName]="i" />
+              <div
+                class=""
+                [hidden]="
+                  miFormulario.get(['enemigos', i])?.valid ||
+                  miFormulario.get(['enemigos', i])?.pristine
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-exclamation-circle"
+                  viewBox="0 0 16 16"
+                  style="padding-right: 5px; color: red"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                  />
+                  <path
+                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                  />
+                </svg>
+                <span *ngIf="miFormulario.get(['enemigos', i])?.errors"
+                  >Este campo no puede estar vacio</span
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button
+          (click)="AddFormArray('enemigos')"
+          class="boton"
+          style="margin-right: 2rem"
+        >
+          +
+        </button>
+        <button
+          (click)="RemoveFormArray('enemigos')"
+          *ngIf="enemigos.length"
+          class="boton"
+        >
+          -
+        </button>
+      </div>
+      <button
+        [disabled]="miFormulario.invalid"
+        (click)="Guardar()"
+        routerLink="/lista-hero/"
+        data-bs-dismiss="modal"
+      >
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>

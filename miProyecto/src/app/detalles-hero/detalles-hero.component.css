@@ -1,0 +1,61 @@
+@keyframes parpadear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.buttonM {
+  border-radius: 4rem !important;
+  border: 2px solid #b300b3;
+  color: #b300b3;
+}
+.buttonM:hover {
+  background-color: #b300b3;
+  color: #fff;
+  color: black;
+}
+h1 {
+  font-family: UnitedPlanetsBold;
+  color: var(--color);
+}
+.Heroe {
+  box-shadow: 0 0 2px var(--color), 0 0 5px var(--color), 0 0 10px var(--color);
+  animation: parpadear 5s infinite;
+}
+
+.columna1 {
+  color: #b300b3;
+  font-family: UnitedPlanetsBold;
+}
+.columna2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #efe8ef;
+}
+
+.tabla-transparente {
+  background-color: transparent;
+  border-collapse: collapse;
+  width: 100%;
+}
+.contenedor {
+  background-color: #2b2b2b4f;
+}
+
+.tabla-transparente th,
+.tabla-transparente td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.tituloModal {
+  font-family: UnitedPlanetsBold;
+  color: black;
+}
+.cajaModal {
+  background-color: #f5f5f5;
+}
