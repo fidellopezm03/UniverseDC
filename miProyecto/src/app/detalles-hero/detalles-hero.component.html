@@ -1,5 +1,5 @@
 <!-- se muestran los detalles de cada super Héroe mientras no se quiera modificar  -->
-<div class="table-hover" [style.--color]="service.Heroes[indice].colorHero">
+<div class="table-hover" [style.--color]="service.Hero.colorHero">
   <div class="row row-cols-3">
     <div class="col-4 contenedor">
       <table class="tabla-transparente w-100 mt-4">
@@ -7,13 +7,13 @@
         <tbody>
           <tr>
             <td class="columna1">Nombre Original</td>
-            <td class="columna2">{{ service.Heroes[indice].nombre }}</td>
+            <td class="columna2">{{ service.Hero.nombre }}</td>
           </tr>
           <tr>
             <td class="columna1">Super Poderes</td>
             <td class="columna2">
-              <span *ngFor="let poderes of service.Heroes[indice].poderes"
-                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+              <span *ngFor="let poderes of service.Hero.poderes"
+                ><span [style.color]="service.Hero.colorHero">*</span
                 >{{ poderes }}<br
               /></span>
             </td>
@@ -21,34 +21,33 @@
           <tr>
             <td class="columna1">Debilidades</td>
             <td class="columna2">
-              <span
-                *ngFor="let debilidades of service.Heroes[indice].debilidades"
-                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+              <span *ngFor="let debilidades of service.Hero.debilidades"
+                ><span [style.color]="service.Hero.colorHero">*</span
                 >{{ debilidades }}<br
               /></span>
             </td>
           </tr>
           <tr>
             <td class="columna1">Peso</td>
-            <td class="columna2">{{ service.Heroes[indice].peso }}Kg</td>
+            <td class="columna2">{{ service.Hero.peso }}Kg</td>
           </tr>
           <tr>
             <td class="columna1">Estatura</td>
-            <td class="columna2">{{ service.Heroes[indice].estatura }}m</td>
+            <td class="columna2">{{ service.Hero.estatura }}m</td>
           </tr>
           <tr>
             <td class="columna1">Color del Pelo</td>
-            <td class="columna2">{{ service.Heroes[indice].colorPelo }}</td>
+            <td class="columna2">{{ service.Hero.colorPelo }}</td>
           </tr>
 
           <tr>
             <td class="columna1">Color de los ojos</td>
-            <td class="columna2">{{ service.Heroes[indice].colorOjos }}</td>
+            <td class="columna2">{{ service.Hero.colorOjos }}</td>
           </tr>
 
           <tr>
             <td class="columna1">Alias</td>
-            <td class="columna2">{{ service.Heroes[indice].alias }}</td>
+            <td class="columna2">{{ service.Hero.alias }}</td>
           </tr>
         </tbody>
       </table>
@@ -59,19 +58,19 @@
         <tbody>
           <tr>
             <td class="columna1">Residencia</td>
-            <td class="columna2">{{ service.Heroes[indice].residencia }}</td>
+            <td class="columna2">{{ service.Hero.residencia }}</td>
           </tr>
 
           <tr>
             <td class="columna1">Afiliación</td>
-            <td class="columna2">{{ service.Heroes[indice].afiliaciones }}</td>
+            <td class="columna2">{{ service.Hero.afiliaciones }}</td>
           </tr>
 
           <tr>
             <td class="columna1">enemigos</td>
             <td class="columna2">
-              <span *ngFor="let enemigos of service.Heroes[indice].enemigos"
-                ><span [style.color]="service.Heroes[indice].colorHero">*</span
+              <span *ngFor="let enemigos of service.Hero.enemigos"
+                ><span [style.color]="service.Hero.colorHero">*</span
                 >{{ enemigos }}<br
               /></span>
             </td>
@@ -81,15 +80,15 @@
     </div>
     <div class="col-4">
       <div style="text-align: center; font-size: 3rem; height: 100px">
-        <h1>{{ service.Heroes[indice].superNombre }}</h1>
+        <h1>{{ service.Hero.superNombre }}</h1>
       </div>
 
       <img
-        [src]="service.Heroes[indice].imgHero"
+        [src]="service.Hero.imgHero"
         width="400"
         height="500"
         class="Heroe mb-4"
-        [style.--color]="service.Heroes[indice].colorHero"
+        [style.--color]="service.Hero.colorHero"
       />
 
       <button
@@ -164,10 +163,7 @@
 
             <!-- Modal body -->
 
-            <app-agregar
-              *ngIf="service.modificar"
-              [indice]="indice"
-            ></app-agregar>
+            <app-agregar *ngIf="service.modificar"></app-agregar>
           </div>
         </div>
       </div>

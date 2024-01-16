@@ -5,7 +5,6 @@
     [(ngModel)]="objetivo"
     class="busqueda mt-2 mt-2"
     name="target"
-    (ngModelChange)="Actualizar()"
     style="width: 230px; height: 40px"
   />
   <svg
@@ -64,10 +63,10 @@
         </div>
       </div>
       <div
-        *ngFor="let i of service.Heroes; let j = index"
-        (click)="Transmitir(j)"
+        *ngFor="let i of service.Heroes | filtro : objetivo"
+        (click)="Transmitir(i.id)"
       >
-        <div class="card mt-4" [style.--color]="service.Heroes[j].colorHero">
+        <div class="card mt-4" [style.--color]="i.colorHero">
           <div class="card-body">
             <br />
             <img
@@ -85,8 +84,8 @@
     </div>
 
     <!-- Detalles de Héroes -->
-    <div class="col-8" *ngIf="index != -1">
-      <app-detalles-hero [indice]="index"></app-detalles-hero>
+    <div class="col-8" *ngIf="id != ''">
+      <app-detalles-hero [id]="id"></app-detalles-hero>
     </div>
   </div>
 </div>

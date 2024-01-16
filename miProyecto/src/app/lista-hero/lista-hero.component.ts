@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AgregarComponent } from '../agregar/agregar.component';
 import { RouterLink } from '@angular/router';
+import { FiltroPipe } from '../filtro.pipe';
 
 @Component({
   selector: 'app-lista-hero',
@@ -15,12 +16,13 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     AgregarComponent,
     RouterLink,
+    FiltroPipe,
   ],
   templateUrl: './lista-hero.component.html',
   styleUrl: './lista-hero.component.css',
 })
 export class ListaHeroComponent {
-  index: number = -1;
+  id: string = '';
   objetivo: string = '';
 
   constructor(public service: ServicioHeroService) {
@@ -28,10 +30,7 @@ export class ListaHeroComponent {
     this.service.mostrarSuperior = true;
     this.service.valorActivo = 'Héroes';
   }
-  Transmitir(index: number): void {
-    this.index = index;
-  }
-  Actualizar(): void {
-    this.service.Actualizar(this.objetivo);
+  Transmitir(id: string): void {
+    this.id = id;
   }
 }

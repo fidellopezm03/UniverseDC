@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   ReactiveFormsModule,
@@ -60,24 +60,22 @@ export class AgregarComponent implements OnInit {
     enemigos: new FormArray([], [Validators.required]),
   });
 
-  @Input() indice: number = -1;
-
   ngOnInit(): void {
     if (this.service.modificar) {
-      this.miFormulario.patchValue(this.service.Heroes[this.indice]);
+      this.miFormulario.patchValue(this.service.Hero);
       const Poderes = this.miFormulario.get('poderes') as FormArray;
       const Debilidades = this.miFormulario.get('debilidades') as FormArray;
       const Enemigos = this.miFormulario.get('enemigos') as FormArray;
       Poderes.clear();
       Debilidades.clear();
       Enemigos.clear();
-      this.service.Heroes[this.indice].poderes.forEach((poder) => {
+      this.service.Hero.poderes.forEach((poder) => {
         Poderes.push(this.instancia.control(poder));
       });
-      this.service.Heroes[this.indice].debilidades.forEach((debilidad) => {
+      this.service.Hero.debilidades.forEach((debilidad) => {
         Debilidades.push(this.instancia.control(debilidad));
       });
-      this.service.Heroes[this.indice].enemigos.forEach((enemigo) => {
+      this.service.Hero.enemigos.forEach((enemigo) => {
         Enemigos.push(this.instancia.control(enemigo));
       });
     }
@@ -149,7 +147,7 @@ export class AgregarComponent implements OnInit {
     nuevoHero = this.miFormulario.value;
 
     if (this.service.modificar) {
-      this.service.put(nuevoHero, this.indice);
+      this.service.put(nuevoHero);
       this.service.modificar = false;
     } else {
       this.service.post(nuevoHero);

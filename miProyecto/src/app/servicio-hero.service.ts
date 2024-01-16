@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { superHero } from './superHeroe';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServicioHeroService {
   Heroes: Array<superHero> = [];
+  Hero: superHero = new superHero();
   colorSuperior: string = '#2b2b2b';
   valorActivo: string = '';
   mostrarSuperior: boolean = false;
@@ -22,10 +23,19 @@ export class ServicioHeroService {
         this.Heroes = res;
       });
   }
+  getHero(id: string): void {
+    const params = new HttpParams().set('id', id);
 
-  delete(i: string, j: number): void {
     this.http
-      .delete<superHero[]>('http://localhost:3000/Heroes/' + i)
+      .get<superHero>('http://localhost:3000/Heroes/' + id)
+      .subscribe((res) => {
+        this.Hero = res;
+      });
+  }
+
+  delete(i: string): void {
+    this.http
+      .delete<superHero>('http://localhost:3000/Heroes/' + i)
       .subscribe((res) => {
         this.getHeroes();
       });
@@ -38,27 +48,15 @@ export class ServicioHeroService {
         this.Heroes.push(res);
       });
   }
-  put(Heroe: superHero, i: number): void {
+  put(Heroe: superHero): void {
     this.http
-      .put<superHero[]>('http://localhost:3000/Heroes/' + Heroe.id, Heroe)
+      .put<superHero>('http://localhost:3000/Heroes/' + Heroe.id, Heroe)
       .subscribe((res) => {
-        this.Heroes[i] = Heroe;
+        this.Hero = res;
+        this.getHeroes();
       });
   }
 
-  Actualizar(objetivo: string): void {
-    if (objetivo == '') this.getHeroes();
-    else {
-      let nuevo: Array<superHero> = [];
-
-      for (let i of this.Heroes) {
-        if (i.superNombre.toLowerCase().indexOf(objetivo.toLowerCase()) > -1)
-          nuevo.push(i);
-      }
-
-      this.Heroes = nuevo;
-    }
-  }
   generateUuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
       /[xy]/g,
