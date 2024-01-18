@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { superHero } from './superHeroe';
-import { HttpClientModule, HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import { HttpClientModule, HttpClient, HttpParams } from '@angular/common/http';
 export class ServicioHeroService {
   Heroes: Array<superHero> = [];
   Hero: superHero = new superHero();
-  colorSuperior: string = '#2b2b2b';
+  colorSuperior: string = '';
   valorActivo: string = '';
   mostrarSuperior: boolean = false;
   modificar: boolean = false;
@@ -24,8 +24,6 @@ export class ServicioHeroService {
       });
   }
   getHero(id: string): void {
-    const params = new HttpParams().set('id', id);
-
     this.http
       .get<superHero>('http://localhost:3000/Heroes/' + id)
       .subscribe((res) => {
