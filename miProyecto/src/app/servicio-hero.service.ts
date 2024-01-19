@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ServicioHeroService {
   Heroes: Array<superHero> = [];
   Hero: superHero = new superHero();
+  //Valores guía de la aplicación
   colorSuperior: string = '';
   valorActivo: string = '';
   mostrarSuperior: boolean = false;

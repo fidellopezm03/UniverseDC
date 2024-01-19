@@ -17,7 +17,7 @@ export class AppComponent {
 
   constructor(private location: Location, public service: ServicioHeroService) {
     this.location.subscribe((event) => {
-      this.service.mostrarSuperior = false;
+      this.service.mostrarSuperior = this.service.mostrarDetalles = false;
     });
   }
 }
