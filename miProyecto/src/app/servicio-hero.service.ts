@@ -13,6 +13,7 @@ export class ServicioHeroService {
   mostrarSuperior: boolean = false;
   modificar: boolean = false;
   agregar: boolean = false;
+  mostrarDetalles: boolean = false;
   constructor(private http: HttpClient) {
     this.getHeroes();
   }
@@ -37,6 +38,7 @@ export class ServicioHeroService {
       .subscribe((res) => {
         this.getHeroes();
       });
+    this.mostrarDetalles = false;
   }
   post(Heroe: superHero): void {
     Heroe.id = this.generateUuid();

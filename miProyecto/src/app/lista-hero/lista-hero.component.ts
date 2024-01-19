@@ -32,5 +32,6 @@ export class ListaHeroComponent {
   }
   Transmitir(id: string): void {
     this.id = id;
+    this.service.mostrarDetalles = true;
   }
 }

@@ -84,7 +84,7 @@
     </div>
 
     <!-- Detalles de Héroes -->
-    <div class="col-8" *ngIf="id != ''">
+    <div class="col-8" *ngIf="id != '' && service.mostrarDetalles">
       <app-detalles-hero [id]="id"></app-detalles-hero>
     </div>
   </div>

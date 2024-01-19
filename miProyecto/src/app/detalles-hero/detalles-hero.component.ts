@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { ServicioHeroService } from '../servicio-hero.service';
 import { CommonModule } from '@angular/common';
 import { AgregarComponent } from '../agregar/agregar.component';
@@ -15,7 +15,7 @@ export class DetallesHeroComponent implements OnChanges {
   @Input() id: string = '';
 
   constructor(public service: ServicioHeroService) {}
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.service.getHero(this.id);
   }
   Eliminar(): void {

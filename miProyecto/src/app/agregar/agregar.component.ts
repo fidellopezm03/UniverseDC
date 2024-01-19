@@ -131,12 +131,9 @@ export class AgregarComponent implements OnInit {
     return this.miFormulario.get('enemigos') as FormControl;
   }
 
-  getFomrArray(valor: string, Formulario: FormGroup): any {
-    return Formulario.get(valor);
-  }
   AddFormArray(valor: string) {
     const referencia = this.miFormulario.get(valor) as FormArray;
-    referencia.push(new FormControl('', [Validators.required]));
+    referencia.push(this.instancia.control('', [Validators.required]));
   }
   RemoveFormArray(valor: string) {
     const referencia = this.miFormulario.get(valor) as FormArray;
